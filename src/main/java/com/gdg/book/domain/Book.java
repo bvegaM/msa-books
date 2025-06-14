@@ -19,5 +19,5 @@ public class Book {
   private String name;
   private String description;
   private Integer yearPublication;
-  private List<Author> listOfAuthors;
+  private List<Author> authors;
 }

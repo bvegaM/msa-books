@@ -26,8 +26,8 @@ class BookTest {
         assertEquals("Test Book", book.getName());
         assertEquals("A test book description", book.getDescription());
         assertEquals(Integer.valueOf(2023), book.getYearPublication());
-        assertEquals(2, book.getListOfAuthors().size());
-        assertEquals("John Doe", book.getListOfAuthors().get(0).getName());
+        assertEquals(2, book.getAuthors().size());
+        assertEquals("John Doe", book.getAuthors().get(0).getName());
     }
 
     @Test
@@ -40,14 +40,14 @@ class BookTest {
         book.setName("Test Book Name");
         book.setDescription("Test Description");
         book.setYearPublication(2024);
-        book.setListOfAuthors(authors);
+        book.setAuthors(authors);
         
         assertEquals("test-id", book.getId());
         assertEquals("Test Book Name", book.getName());
         assertEquals("Test Description", book.getDescription());
         assertEquals(Integer.valueOf(2024), book.getYearPublication());
-        assertEquals(1, book.getListOfAuthors().size());
-        assertEquals("Test Author", book.getListOfAuthors().get(0).getName());
+        assertEquals(1, book.getAuthors().size());
+        assertEquals("Test Author", book.getAuthors().get(0).getName());
     }
 
     @Test
