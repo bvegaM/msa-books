@@ -1,5 +1,10 @@
 package com.gdg.book.domain;
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.ManyToMany;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -13,11 +18,15 @@ import java.util.List;
 @NoArgsConstructor
 @AllArgsConstructor
 @ToString
+@Entity
 public class Book {
 
+  @Id
+  @GeneratedValue(strategy = GenerationType.IDENTITY)
   private String id;
   private String name;
   private String description;
   private Integer yearPublication;
+  @ManyToMany
   private List<Author> authors;
 }
